@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+    
+	<util:list list-class="java.util.Stack" id="myfriends">
+		<value>Shah Rukh Khan</value>
+		<value>Salman Khan</value>
+		<value>Ranbeer Kapoor</value>
+		<value>Ranbir Singh</value>
+		<value>Kiara Advani</value>
+		<value>Alia Bhatt</value>
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="collfees">
+		<entry key="Java" value="500" />
+		<entry key="Python" value="500" />
+		<entry key="C" value="500" />
+		<entry key="Oracle" value="500" />
+		<entry key="C++" value="500" />
+	</util:map>
+	
+	<bean class="com.springcore.collections.standalone.Me" name="person1">
+		<property name="friends" ref="myfriends"/>
+			<!-- <ref bean="myfriends"/> -->
+		<property name="fees" ref="collfees"/>
+	</bean>
+	
+</beans>
